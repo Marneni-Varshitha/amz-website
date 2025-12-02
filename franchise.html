@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franchise Opportunity - AutoMindz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #343a40;
+            --light-bg: #f8f9fa;
+            --dark-bg: #212529;
+            --text-light: #ffffff;
+            --text-dark: #495057;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: var(--text-dark); background-color: var(--text-light); }
+        .container { width: 90%; max-width: 1200px; padding: 20px 0; margin: auto; }
+        h2 { font-size: 2.5em; margin-bottom: 20px; color: var(--secondary-color); text-align: center; }
+        h3 { color: var(--primary-color); font-size: 1.8em; margin-bottom: 15px; }
+        
+        /* Nav/Header Styles (FIXED HEIGHT CSS) */
+        header { 
+            background: var(--dark-bg); 
+            color: var(--text-light); 
+            padding: 0; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            height: 90px; 
+        }
+        .navbar { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            height: 100%; 
+        }
+        .logo a { font-size: 1.8em; font-weight: 700; color: var(--primary-color); text-decoration: none; display: inline-block;}
+        .logo img { height: 75px; width: auto; display: block; }
+        
+        .nav-links { list-style: none; display: flex; }
+        .nav-links li a { color: var(--text-light); text-decoration: none; padding: 0 15px; transition: color 0.3s; }
+        .nav-links li a:hover { color: var(--primary-color); }
+        .cta-button { background-color: var(--primary-color); color: var(--text-light); padding: 8px 16px; text-decoration: none; border-radius: 5px; font-weight: 600; }
+        
+        /* Franchise Content Styles (REDUCED PADDING) */
+        #franchise-hero {
+            /* Removed image background */
+            background: var(--text-light); 
+            color: var(--text-dark);
+            padding: 20px 0 0; /* Minimal top padding */
+            text-align: center;
+        }
+        #franchise-hero h1 { 
+            font-size: 3em; 
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+        #franchise-hero p { 
+            font-size: 1.2em; 
+            margin-bottom: 0; /* Removed bottom margin */
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Removed .franchise-image-container CSS block */
+
+        #benefits {
+            padding: 40px 0 60px; /* Reduced top padding to move content up */
+            background-color: var(--light-bg);
+        }
+        /* CRITICAL FIX: Ensure H2 and content start immediately */
+        #benefits .container > h2 {
+            margin-top: 0;
+            padding-top: 0;
+        }
+
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        .benefit-item {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        #inquiry {
+            padding: 60px 0;
+        }
+        .inquiry-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+        .form-container {
+            background: var(--light-bg);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        /* Footer Styles and Media Queries omitted for brevity */
+        footer { background: var(--secondary-color); color: var(--text-light); padding: 40px 0; text-align: center; margin-top: 40px; }
+        .copyright { font-size: 0.8em; }
+        
+        @media (max-width: 900px) {
+            header { height: auto; padding: 10px 0; }
+            .inquiry-grid { grid-template-columns: 1fr; }
+            .benefit-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .navbar { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="image_d692c8.png" alt="AutoMindz Logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li class="active"><a href="franchise.html">Franchise</a></li>
+                </ul>
+            </nav>
+            <a href="services.html" class="cta-button">Book Service</a>
+        </div>
+    </header>
+
+    <section id="franchise-hero">
+        <div class="container">
+            <h1 style="font-size: 2.5em; margin-bottom: 5px; color: var(--secondary-color);">Why Choose an AutoMindz Franchise?</h1>
+            <p style="font-size: 1.1em;">Join the AutoMindz franchise network and leverage our proven model, technology, and support.</p>
+            
+            </div>
+    </section>
+
+    <section id="benefits">
+        <div class="container">
+            <div class="benefit-grid">
+                <div class="benefit-item">
+                    <h3 style="margin-top: 0;">Proven Business Model</h3>
+                    <p>Access our established operational blueprint and scalable franchise model, reducing start-up risk.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3 style="margin-top: 0;">Turnkey Solutions</h3>
+                    <p>We provide full setup support, including equipment procurement, site selection, and initial inventory planning.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3 style="margin-top: 0;">Technology & Training</h3>
+                    <p>Benefit from proprietary management software and comprehensive hands-on training for staff and owners.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3 style="margin-top: 0;">Marketing Support</h3>
+                    <p>Receive marketing collateral and digital strategy guidance to quickly establish your local presence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="inquiry">
+        <div class="container inquiry-grid">
+            <div class="form-container">
+                <h3>Start Your Journey Here</h3>
+                <p>Fill out the form below to receive our detailed Franchise Disclosure Document (FDD) and investment summary.</p>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Preferred Franchise Location/City</label>
+                        <input type="text" id="location" name="location">
+                    </div>
+                    <div class="form-group">
+                        <label for="capital">Estimated Available Capital</label>
+                        <select id="capital" name="capital">
+                            <option value="">-- Select Range --</option>
+                            <option value="50k-100k">$50,000 - $100,000</option>
+                            <option value="100k-250k">$100,000 - $250,000</option>
+                            <option value="250k+">$250,000+</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="cta-button">Request Franchise Info</button>
+                </form>
+            </div>
+            
+            <div style="padding: 20px;">
+                <h3>Next Steps</h3>
+                <p>1. **Submit Inquiry:** Fill out the form to express your initial interest.</p>
+                <p>2. **Review Documents:** We send you detailed financials and requirements.</p>
+                <p>3. **Discovery Day:** Meet our team and visit our flagship center.</p>
+                <p>4. **Launch:** Receive full support for training and store opening.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p class="copyright">Copyright &copy; 2025 AutoMindz - All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

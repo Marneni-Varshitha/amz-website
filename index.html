@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoMindz - Premium Auto Care</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #343a40;
+            --light-bg: #f8f9fa;
+            --dark-bg: #212529;
+            --text-light: #ffffff;
+            --text-dark: #495057;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: var(--text-dark); background-color: var(--text-light); }
+        .container { width: 90%; max-width: 1200px; margin: auto; padding: 20px 0; }
+        h2 { font-size: 2.5em; margin-bottom: 20px; color: var(--secondary-color); text-align: center; }
+        
+        /* Header & Navigation (FIXED HEIGHT CSS) */
+        header { 
+            background: var(--dark-bg); 
+            color: var(--text-light); 
+            padding: 0; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            height: 90px; 
+        }
+        .navbar { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            height: 100%; 
+        }
+        .logo a { font-size: 1.8em; font-weight: 700; color: var(--primary-color); text-decoration: none; display: inline-block;}
+        .logo img { height: 75px; width: auto; display: block; }
+        
+        .nav-links { list-style: none; display: flex; }
+        .nav-links li a { color: var(--text-light); text-decoration: none; padding: 0 15px; transition: color 0.3s; }
+        .nav-links li a:hover { color: var(--primary-color); }
+        .cta-button { background-color: var(--primary-color); color: var(--text-light); padding: 8px 16px; text-decoration: none; border-radius: 5px; font-weight: 600; transition: background-color 0.3s; }
+        .cta-button:hover { background-color: #0056b3; }
+        
+        /* Hero Section (Video Background) */
+        #hero {
+            position: relative;
+            height: 80vh; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            text-align: center;
+        }
+        #hero video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: 0;
+            transform: translate(-50%, -50%);
+        }
+        #hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6); 
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: var(--text-light);
+            max-width: 800px;
+        }
+        .hero-content h1 { font-size: 4em; margin-bottom: 10px; color: var(--primary-color); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); }
+        .hero-content p { font-size: 1.5em; margin-bottom: 30px; }
+
+        /* Services Preview Section */
+        #preview-services { padding: 60px 0; background-color: var(--light-bg); }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; text-align: center; }
+        .service-item { background: var(--text-light); padding: 30px 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); transition: transform 0.3s; }
+        .service-item:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); }
+        .service-item img { width: 100%; height: 200px; object-fit: cover; border-radius: 5px; margin-bottom: 15px; }
+        .service-item h3 { color: var(--primary-color); margin-bottom: 10px; }
+
+        /* --- New Review Section Styles --- */
+        #reviews {
+            padding: 60px 0;
+            background-color: var(--text-light);
+        }
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .review-item {
+            background: var(--light-bg);
+            padding: 25px;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+        .review-item p {
+            font-style: italic;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+        .reviewer {
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 0.9em;
+        }
+        /* --- End Review Section Styles --- */
+        
+        /* Footer Styles */
+        footer { background: var(--secondary-color); color: var(--text-light); padding: 40px 0; text-align: center; }
+        .copyright { font-size: 0.8em; }
+
+        @media (max-width: 768px) {
+            header { height: auto; padding: 10px 0; }
+            .hero-content h1 { font-size: 2.5em; }
+            .nav-links { display: none; }
+            .navbar { justify-content: center; flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="image_d692c8.png" alt="AutoMindz Logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="franchise.html">Franchise</a></li>
+                </ul>
+            </nav>
+            <a href="services.html" class="cta-button">Book Service</a>
+        </div>
+    </header>
+
+    <section id="hero">
+        <video autoplay loop muted playsinline poster="beautiful-car-washing-service.jpg">
+            <source src="car_wash_hero.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="container hero-content">
+            <h1>AutoMindz  Transforming Auto Care</h1>
+            <p>Experience the ultimate in vehicle detailing and protection.</p>
+            <a href="services.html" class="cta-button">View Our Premium Services</a>
+        </div>
+    </section>
+
+    <section id="preview-services">
+        <div class="container">
+            <h2>Popular Services This Month</h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <img src="istockphoto-2210225131-1024x1024.jpg" alt="Ceramic Coating">
+                    <h3>Ceramic Coating</h3>
+                    <p>The ultimate shield for your vehicle with a 3-5 year guarantee.</p>
+                </div>
+                <div class="service-item">
+                    <img src="tyre_alignment.jpg" alt="Wheel Alignment">
+                    <h3>Tyre & Alignment</h3>
+                    <p>Precision alignment to maximize tyre life and improve handling.</p>
+                </div>
+                <div class="service-item">
+                    <img src="Mobile-Car-Detailing-Chandler-AZ-768x538.webp" alt="Interior Detailing">
+                    <h3>Interior Detailing</h3>
+                    <p>Deep cleaning and sanitization for a hygienic cabin.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="services.html" class="cta-button">Explore All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <hr/>
+
+    <section id="reviews">
+        <div class="container">
+            <h2 style="color: var(--primary-color);">What Our Customers Say</h2>
+            <div class="review-grid">
+                <div class="review-item">
+                    <p>"The ceramic coating service was flawless. My car looks better than new, and the water beads off perfectly. Highly recommend AutoMindz!"</p>
+                    <div class="reviewer">— Riya S., Hyderabad</div>
+                </div>
+                <div class="review-item">
+                    <p>"I chose the interior detailing package, and they managed to remove stains I thought were permanent. The car smells fresh and feels brand new."</p>
+                    <div class="reviewer">— Vivek P., Bangalore</div>
+                </div>
+                <div class="review-item">
+                    <p>"Quick, professional, and excellent value for the Tyre & Alignment service. My vehicle handles smoothly now. Great technology and friendly staff."</p>
+                    <div class="reviewer">— Sanjay K., Chennai</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p class="copyright">Copyright &copy; 2025 AutoMindz - All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

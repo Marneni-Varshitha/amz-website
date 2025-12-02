@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - AutoMindz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #343a40;
+            --light-bg: #f8f9fa;
+            --dark-bg: #212529;
+            --text-light: #ffffff;
+            --text-dark: #495057;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: var(--text-dark); background-color: var(--text-light); }
+        .container { width: 90%; max-width: 1200px; margin: auto; padding: 20px 0; }
+        h2 { font-size: 2.5em; margin-bottom: 20px; color: var(--secondary-color); text-align: center; }
+        
+        /* Header & Navigation Styles (FIXED HEIGHT CSS) */
+        header { 
+            background: var(--dark-bg); 
+            color: var(--text-light); 
+            padding: 0; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            height: 90px; /* FIXED HEIGHT */
+        }
+        .navbar { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            height: 100%; 
+        }
+        .logo a { font-size: 1.8em; font-weight: 700; color: var(--primary-color); text-decoration: none; display: inline-block;}
+        .logo img { height: 75px; width: auto; display: block; }
+
+        .nav-links { list-style: none; display: flex; }
+        .nav-links li a { color: var(--text-light); text-decoration: none; padding: 0 15px; transition: color 0.3s; }
+        .nav-links li a:hover { color: var(--primary-color); }
+        .cta-button { background-color: var(--primary-color); color: var(--text-light); padding: 8px 16px; text-decoration: none; border-radius: 5px; font-weight: 600; transition: background-color 0.3s; }
+        
+        /* Services List Specific Styles */
+        #services-list { padding: 60px 0; }
+        .main-content-grid {
+            display: grid;
+            grid-template-columns: 3fr 1fr; 
+            gap: 30px;
+        }
+        
+        .service-card {
+            display: flex;
+            background: var(--light-bg);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            overflow: hidden;
+            align-items: center;
+        }
+        
+        .service-card:nth-child(even) { flex-direction: row-reverse; }
+
+        .service-image { flex: 1; min-width: 300px; }
+        .service-image img { width: 100%; height: 300px; object-fit: cover; display: block; }
+        .service-details { flex: 2; padding: 30px; }
+        .service-details h3 { color: var(--primary-color); font-size: 2em; margin-bottom: 15px; }
+        .service-details ul { list-style: none; padding-left: 0; margin-top: 15px; }
+        .service-details ul li { margin-bottom: 8px; padding-left: 20px; position: relative; }
+        .service-details ul li::before { content: '✓'; color: var(--primary-color); font-weight: 700; position: absolute; left: 0; }
+        
+        /* Basket Styles */
+        #booking-basket {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 100px; 
+            height: fit-content;
+        }
+        #booking-basket h3 { 
+            border-bottom: 2px solid var(--primary-color); 
+            padding-bottom: 10px; 
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+        #basket-list { list-style: none; padding: 0; margin-bottom: 20px; }
+        #basket-list li { 
+            border-bottom: 1px dotted #ccc;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9em;
+        }
+        .remove-item {
+            color: red;
+            cursor: pointer;
+            font-size: 0.8em;
+            margin-left: 10px;
+        }
+
+        /* Footer Styles and Media Queries omitted for brevity */
+        footer { background: var(--secondary-color); color: var(--text-light); padding: 40px 0; text-align: center; margin-top: 40px; }
+        .copyright { font-size: 0.8em; }
+        
+        @media (max-width: 900px) {
+            header { height: auto; padding: 10px 0; }
+            .main-content-grid { grid-template-columns: 1fr; }
+            .service-card, .service-card:nth-child(even) { flex-direction: column; }
+            .service-image { min-width: 100%; }
+            #booking-basket { position: static; margin-bottom: 20px; }
+            .nav-links { display: none; }
+            .navbar { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="image_d692c8.png" alt="AutoMindz Logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li class="active"><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="franchise.html">Franchise</a></li>
+                </ul>
+            </nav>
+            <a href="contact.html" class="cta-button">Book Service</a>
+        </div>
+    </header>
+
+    <section id="services-list">
+        <div class="container main-content-grid">
+            
+            <div>
+                <h2>Our Full Spectrum of Premium Auto Care Solutions</h2>
+                <p style="margin-bottom: 50px;">Select your services and click 'Book on WhatsApp' to confirm!</p>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="istockphoto-2210225131-1024x1024.jpg" alt="Ceramic Coating Application">
+                    </div>
+                    <div class="service-details">
+                        <h3>1. Ceramic Coating </h3>
+                        <p>The ultimate shield for your vehicle, providing years of superior protection and gloss.</p>
+                        <ul><li>Durable protection against UV, dirt, and chemicals.</li><li>3-5 year guarantee.</li></ul>
+                        <button class="cta-button add-to-basket" data-service="Ceramic Coating">Add to Basket</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="beautiful-car-washing-service.jpg" alt="High-Pressure Foam Wash">
+                    </div>
+                    <div class="service-details">
+                        <h3>2. Premium Foam Wash </h3>
+                        <p>Experience a touchless and thorough cleaning using high-foam shampoos and advanced steam.</p>
+                        <ul><li>Safe, scratch-free cleaning process.</li><li>Undercarriage wash and wheel cleaning.</li></ul>
+                        <button class="cta-button add-to-basket" data-service="Premium Foam Wash">Add to Basket</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="tyre_alignment.jpg" alt="Tyre replacement and Wheel Alignment Service">
+                    </div>
+                    <div class="service-details">
+                        <h3>3. Tyre & Alignment Service </h3>
+                        <p>Ensure your vehicle handles safely and efficiently. We provide professional wheel alignment, balancing, and tyre replacement services.</p>
+                        <ul>
+                            <li>Precision computerized wheel alignment.</li>
+                            <li>Tyre fitting, rotation, and balancing.</li>
+                            <li>Extends tyre life and improves fuel economy.</li>
+                        </ul>
+                        <button class="cta-button add-to-basket" data-service="Tyre & Alignment Service">Add to Basket</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="Mobile-Car-Detailing-Chandler-AZ-768x538.webp" alt="Car Interior Steam Cleaning">
+                    </div>
+                    <div class="service-details">
+                        <h3>4. Complete Interior Detailing</h3>
+                        <p>Eliminate odors and bacteria using professional steam cleaning and deep extraction techniques.</p>
+                        <ul><li>Steam cleaning and deep vacuuming.</li><li>Upholstery/leather conditioning.</li><li>Odor removal and sanitization.</li></ul>
+                        <button class="cta-button add-to-basket" data-service="Interior Detailing">Add to Basket</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="booking-basket">
+                <h3>Your Booking Basket</h3>
+                <ul id="basket-list">
+                    <li id="empty-message">No services selected yet.</li>
+                </ul>
+                <div style="margin-top: 20px;">
+                    <a id="whatsapp-link" href="#" class="cta-button" style="width: 100%; display: block; text-align: center;">Book on WhatsApp</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p class="copyright">Copyright &copy; 2025 AutoMindz - All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const basketList = document.getElementById('basket-list');
+        const whatsappLink = document.getElementById('whatsapp-link');
+        let selectedServices = [];
+        const phoneNumber = '919876543210'; // <-- CHANGE THIS TO YOUR ACTUAL WHATSAPP NUMBER
+
+        function updateBasket() {
+            basketList.innerHTML = '';
+            if (selectedServices.length === 0) {
+                basketList.innerHTML = '<li id="empty-message">No services selected yet.</li>';
+                whatsappLink.style.opacity = '0.5';
+                whatsappLink.style.pointerEvents = 'none';
+            } else {
+                selectedServices.forEach((service, index) => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `
+                        <span>${service}</span>
+                        <span class="remove-item" data-index="${index}">[Remove]</span>
+                    `;
+                    basketList.appendChild(li);
+                });
+                whatsappLink.style.opacity = '1';
+                whatsappLink.style.pointerEvents = 'auto';
+            }
+            updateWhatsAppLink();
+        }
+
+        function updateWhatsAppLink() {
+            if (selectedServices.length > 0) {
+                const servicesString = selectedServices.join(', ');
+                const message = encodeURIComponent(`Hello AutoMindz, I would like to book the following services: ${servicesString}. Please confirm the appointment!`);
+                whatsappLink.href = `https://wa.me/${phoneNumber}?text=${message}`;
+            } else {
+                whatsappLink.href = "#";
+            }
+        }
+
+        document.querySelectorAll('.add-to-basket').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const serviceName = e.target.getAttribute('data-service');
+                selectedServices.push(serviceName);
+                updateBasket();
+            });
+        });
+
+        basketList.addEventListener('click', (e) => {
+            if (e.target.classList.contains('remove-item')) {
+                const index = parseInt(e.target.getAttribute('data-index'));
+                selectedServices.splice(index, 1);
+                updateBasket();
+            }
+        });
+
+        updateBasket();
+    </script>
+</body>
+</html>
