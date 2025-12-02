@@ -32,13 +32,12 @@
         }
         .navbar { display: flex; justify-content: space-between; align-items: center; height: 100%; }
         .logo a { font-size: 1.8em; font-weight: 700; color: var(--primary-color); text-decoration: none; display: inline-block;}
-        /* NOTE: You will need to make sure the image "image_d692c8.png" is in the correct path or change the src below. */
         .logo img { height: 75px; width: auto; display: block; }
 
         .nav-links { list-style: none; display: flex; }
         .nav-links li a { color: var(--text-light); text-decoration: none; padding: 0 15px; transition: color 0.3s; }
         .nav-links li a:hover { color: var(--primary-color); }
-        .cta-button { background-color: var(--primary-color); color: var(--text-light); padding: 8px 16px; text-decoration: none; border-radius: 5px; font-weight: 600; }
+        .cta-button { background-color: var(--primary-color); color: var(--text-light); padding: 8px 16px; text-decoration: none; border-radius: 5px; }
         
         /* Contact Form Styles */
         #contact-content { padding: 60px 0; }
@@ -139,11 +138,7 @@
             background: #e9ecef; /* Lighter background for placeholder */
             border-radius: 8px; 
             height: 350px; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            font-weight: 600; 
-            color: var(--secondary-color);
+            /* REMOVED CENTER ALIGNMENT TEXT/ICON to make it a clean box */
             border: 1px dashed #ccc; /* Dashed border to highlight it's a placeholder */
         }
 
@@ -246,16 +241,7 @@
                     </div>
 
                     <div class="map-placeholder">
-                        <iframe 
-                            src="https://maps.app.goo.gl/M8gixjotajmofmUb9" 
-                            width="100%" 
-                            height="100%" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
+                        </div>
                 </div>
             </div>
         </div>
