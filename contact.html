@@ -42,6 +42,7 @@
         /* Contact Form Styles */
         #contact-content { padding: 60px 0; }
         .contact-grid { 
+            /* CHANGE: Now grid columns are 1fr (Form) and a single area for info cards */
             display: grid; 
             grid-template-columns: 1fr 1fr; 
             gap: 40px; 
@@ -58,12 +59,15 @@
         .form-group textarea { resize: vertical; height: 150px; }
         .submit-button { border: none; cursor: pointer; }
 
-        /* --- Refined Location/Hours/Map Styles --- */
+        /* --- Info Cards Styles --- */
         .info-cards-container {
             display: grid;
             grid-template-columns: 1fr 1fr; /* Two columns for cards */
             gap: 20px;
-            margin-bottom: 30px; /* Space between cards and map */
+            /* CHANGE: Removed margin-bottom since the map is gone */
+            
+            /* ADDED: Ensure cards take full vertical space in the grid */
+            align-self: start; 
         }
 
         .info-card {
@@ -72,18 +76,19 @@
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
             border-top: 5px solid var(--primary-color); /* Blue top border */
+            height: 100%; /* Ensures cards fill space vertically */
         }
         .info-card h3 {
-            color: var(--primary-color); /* Blue heading */
-            font-size: 1.8em; /* Slightly larger heading */
+            color: var(--primary-color); 
+            font-size: 1.8em; 
             margin-bottom: 15px;
-            text-align: left; /* Align heading to left */
+            text-align: left; 
         }
         /* Underline for headings */
         .info-card h3::after {
             content: '';
             display: block;
-            width: 50px; /* Short underline */
+            width: 50px; 
             height: 2px;
             background: var(--primary-color);
             margin-top: 5px;
@@ -92,16 +97,16 @@
         /* Location Address Styling */
         .location-address-link {
             text-decoration: none;
-            color: var(--text-dark); /* Keep text dark */
+            color: var(--text-dark); 
             font-weight: 400;
-            display: flex; /* For icon and text alignment */
+            display: flex; 
             align-items: flex-start;
             gap: 10px;
             line-height: 1.4;
             margin-top: 10px;
         }
         .location-address-link:hover {
-            color: var(--primary-color); /* Hover effect */
+            color: var(--primary-color); 
         }
         .location-address-link .material-icons {
             color: var(--primary-color);
@@ -118,29 +123,22 @@
         .hours-list {
             list-style: none;
             padding: 0;
-            margin-top: 10px; /* Space from heading */
+            margin-top: 10px; 
         }
         .hours-list li {
             display: flex;
             justify-content: space-between;
             padding: 6px 0;
-            border-bottom: 1px dashed var(--light-bg); /* Lighter dashed line */
+            border-bottom: 1px dashed var(--light-bg); 
             font-size: 1em;
         }
         .hours-list li:last-child { border-bottom: none; }
         .hours-list li span:first-child { font-weight: 500; }
         .hours-list li span:last-child { color: var(--secondary-color); }
-        .hours-list li.special span:last-child { color: var(--primary-color); font-weight: 600; } /* Sat */
-        .hours-list li.closed span:last-child { color: red; font-weight: 600; } /* Sun */
+        .hours-list li.special span:last-child { color: var(--primary-color); font-weight: 600; }
+        .hours-list li.closed span:last-child { color: red; font-weight: 600; }
 
-
-        .map-placeholder { 
-            background: #e9ecef; /* Lighter background for placeholder */
-            border-radius: 8px; 
-            height: 350px; 
-            /* REMOVED CENTER ALIGNMENT TEXT/ICON to make it a clean box */
-            border: 1px dashed #ccc; /* Dashed border to highlight it's a placeholder */
-        }
+        /* REMOVED MAP PLACEHOLDER CSS */
 
         /* Footer Styles and Media Queries */
         footer { background: var(--secondary-color); color: var(--text-light); padding: 40px 0; text-align: center; margin-top: 40px; }
@@ -152,7 +150,6 @@
             .info-cards-container { grid-template-columns: 1fr; } /* Stack cards on mobile */
             .nav-links { display: none; }
             .navbar { flex-direction: column; }
-            .map-placeholder { height: 250px; margin-top: 20px; } /* Adjust map height on mobile */
         }
     </style>
 </head>
@@ -206,43 +203,43 @@
                 </div>
                 
                 <div> 
-                    <div class="info-cards-container">
-                        <div class="info-card">
-                            <h3>Corporate Office</h3>
-                            
-                            <a 
-                                href="https://maps.app.goo.gl/M8gixjotajmofmUb9" 
-                                target="_blank" 
-                                class="location-address-link"
-                                aria-label="Open Corporate Office location in Google Maps"
-                            >
-                                <span class="material-icons">location_on</span>
-                                <span style="font-weight: 400;">
-                                    AutoMindz, Road #5, Railway Colony, Alwal, Hyderabad, Secunderabad, Telangana, India
-                                </span>
-                            </a>
-                            <p class="location-hint">
-                                *Click the map pin icon above to open the exact location in Google Maps.
-                            </p>
-                        </div>
+                    <div class="info-cards-container" style="grid-template-columns: 1fr;"> 
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div class="info-card">
+                                <h3>Corporate Office</h3>
+                                
+                                <a 
+                                    href="https://maps.app.goo.gl/M8gixjotajmofmUb9" 
+                                    target="_blank" 
+                                    class="location-address-link"
+                                    aria-label="Open Corporate Office location in Google Maps"
+                                >
+                                    <span class="material-icons">location_on</span>
+                                    <span style="font-weight: 400;">
+                                        AutoMindz, Road #5, Railway Colony, Alwal, Hyderabad, Secunderabad, Telangana, India
+                                    </span>
+                                </a>
+                                <p class="location-hint">
+                                    *Click the map pin icon above to open the exact location in Google Maps.
+                                </p>
+                            </div>
 
-                        <div class="info-card">
-                            <h3>Hours</h3>
-                            <ul class="hours-list">
-                                <li><span>Mon</span> <span>09:00 am – 05:00 pm</span></li>
-                                <li><span>Tue</span> <span>09:00 am – 05:00 pm</span></li>
-                                <li><span>Wed</span> <span>09:00 am – 05:00 pm</span></li>
-                                <li><span>Thu</span> <span>09:00 am – 05:00 pm</span></li>
-                                <li><span>Fri</span> <span>09:00 am – 05:00 pm</span></li>
-                                <li class="special"><span>Sat</span> <span>By Appointment</span></li>
-                                <li class="closed"><span>Sun</span> <span>Closed</span></li>
-                            </ul>
+                            <div class="info-card">
+                                <h3>Hours</h3>
+                                <ul class="hours-list">
+                                    <li><span>Mon</span> <span>09:00 am – 05:00 pm</span></li>
+                                    <li><span>Tue</span> <span>09:00 am – 05:00 pm</span></li>
+                                    <li><span>Wed</span> <span>09:00 am – 05:00 pm</span></li>
+                                    <li><span>Thu</span> <span>09:00 am – 05:00 pm</span></li>
+                                    <li><span>Fri</span> <span>09:00 am – 05:00 pm</span></li>
+                                    <li class="special"><span>Sat</span> <span>By Appointment</span></li>
+                                    <li class="closed"><span>Sun</span> <span>Closed</span></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="map-placeholder">
-                        </div>
-                </div>
+                    </div>
             </div>
         </div>
     </section>
